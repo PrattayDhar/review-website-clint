@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const ServiceDetails = () => {
+    const [user, setReview] = useState([])
     const singledetails=useLoaderData()
     const {User}=useContext(AuthContext)
     const{_id}=singledetails
+    console.log(singledetails);
 
     const reviewsubmit = event => {
         event.preventDefault();
@@ -36,6 +38,12 @@ const ServiceDetails = () => {
                 }
             })
     }
+    console.log(_id);
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/?id=${_id}`)
+            .then((res) => res.json())
+            .then((data) => setReview(data));
+    }, []);
     
     return (
         <div>
@@ -65,7 +73,7 @@ const ServiceDetails = () => {
                     <div className="card">
                         <img src="..." className="card-img-top" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">Review</h5>
+                            <h5 className="card-title">{user.length}</h5>
                             <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
