@@ -13,6 +13,13 @@ const Addservice = () => {
             },
             body: JSON.stringify(user)
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('Service Added')
+                    event.target.reset()
+                }
+            })
     }
     const blr = event => {
         const field = event.target.name;
