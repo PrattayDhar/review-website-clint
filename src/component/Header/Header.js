@@ -26,11 +26,12 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <div></div>
-                            <Nav.Link ><Link style={{ textDecoration: 'none' }}  to={'/'}>Home</Link></Nav.Link>
+                            <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Home</Link></Nav.Link>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/service'}>Service</Link></Nav.Link>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Blog</Link></Nav.Link>
-                            {User ? <Nav.Link><Link style={{ textDecoration: 'none' }}  to={'/myreview'}></Link>My Review</Nav.Link> : ''}
-                            {User ? <Nav.Link><Link style={{ textDecoration: 'none' }} to={'/addservice'}></Link>Add Services</Nav.Link> : ''}
+                            {User ? <Nav.Link><Link style={{ textDecoration: 'none' }} to={'/myreview'}>My Review</Link></Nav.Link> : ''}
+                            {User ? <Nav.Link>
+                                <Link style={{ textDecoration: 'none' }} to={'/AddServices'}>Add Services</Link></Nav.Link> : ''}
                         </Nav>
                         <Nav>
                             <Nav className="me-auto">
@@ -45,9 +46,6 @@ const Header = () => {
 
                             </Nav>
                             <Nav.Link eventKey={2} to={'/'}>
-
-
-
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
