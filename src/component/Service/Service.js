@@ -1,5 +1,3 @@
-
-import { Button } from 'bootstrap';
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -16,7 +14,7 @@ const Service = () => {
                     <Col lg="10" className='d-none d-lg-block'>
                     </Col>
                     <Col lg=""><p>Total service:  {allservice.length}</p>
-                        <Row xs={1} md={2} className="g-4">
+                        <Row xs={1} md={3} className="g-4">
                             {
                                 allservice.map(service =>
                                     <Col>
@@ -31,7 +29,9 @@ const Service = () => {
                                             <Card.Body>
                                                 <Card.Body className='d-flex  justify-content-around pt-3'>
                                                     <Card.Title>{service.title}</Card.Title>
-                                                    <button className='btn btn-info'>Details</button>
+                                                    <button className='btn btn-info'><Link to={`/servicedetails/${service._id}`}>Details
+                                                    </Link>
+                                                        </button>
                                                     {/* <Button variant="outline-success"><Link to={`/services/${service._id}`} style={{ textDecoration: 'none', color: 'black', }}>Details</Link></Button> */}
                                                 </Card.Body>
                                             </Card.Body>
