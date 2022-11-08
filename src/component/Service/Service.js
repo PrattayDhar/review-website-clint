@@ -20,16 +20,16 @@ const Service = () => {
                                     <Col>
                                         <Card className='cardmodel'>
                                             <Card.Img variant="top" src={service.img} style={{ height: '18rem' }} />
-                                            <Card.Body>
+                                            <Card.Body className='cardmodel'>
                                                 <h6> Price:{service.price} </h6>
                                             </Card.Body>
-                                            <Card.Body>
+                                            <Card.Body className='cardmodel'>
                                                 <p>{service.description.slice(0, 100)}</p>
                                             </Card.Body>
-                                            <Card.Body>
+                                            <Card.Body className='cardmodel'>
                                                 <Card.Body className='d-flex  justify-content-around pt-3'>
                                                     <Card.Title>{service.title}</Card.Title>
-                                                    <button className='btn btn-info'><Link to={`/servicedetails/${service._id}`}>Details
+                                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none' }} to={`/servicedetails/${service._id}`}>Details
                                                     </Link>
                                                         </button>
                                                    
