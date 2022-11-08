@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import  { AuthContext } from '../../context/AuthProvider'
+import './Header.css'
 
 
 const Header = () => {
@@ -20,22 +21,33 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand to={'/'}>React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand className='fs-2' to={'/'}>Survey Helper <small className='fs-6'> By Prattay</small></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
+                            <div></div>
                             <Nav.Link to={'/'}>Home</Nav.Link>
                             <Nav.Link to={'/'}>Service</Nav.Link>
                             <Nav.Link to={'/'}>Blog</Nav.Link>
-                            <Nav.Link to={'/'}>Pricing</Nav.Link>
-                          
+                            {User ? <Nav.Link>My Review</Nav.Link>: ''} 
+                            {User ? <Nav.Link>Add Services</Nav.Link>: ''} 
                         </Nav>
                         <Nav>
                             <Nav className="me-auto">
-                                {User ? <Link onClick={HandleLogout} style={{ textDecoration: 'none' }}>Log Out</Link> : <Nav.Link ><Link to={'/getstarted'} style={{ textDecoration: 'none' }}>Get Started</Link></Nav.Link>}
+                               
+                                    <Nav.Link >{User ? <Link onClick={HandleLogout} style={{ textDecoration: 'none' }}>Log Out</Link> : <Nav.Link ><Link to={'/getstarted'} style={{ textDecoration: 'none' }}>Get Started</Link></Nav.Link>}</Nav.Link>
+
+
+                                    <Nav.Link >{User ? <div className='d-flex'><Nav.Link >{User.displayName}</Nav.Link>
+                                        <Nav.Link  ><img src={User.photoURL} alt="" title={User.displayName} className='rounded-circle  naving' /></Nav.Link></div> : ""}</Nav.Link>
+                              
+                                
+
                             </Nav>
                             <Nav.Link eventKey={2} to={'/'}>
-                                Dank memes
+                                
+                                
+                               
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
