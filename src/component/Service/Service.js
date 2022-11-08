@@ -32,7 +32,7 @@ const Service = () => {
                                                     <button className='btn btn-info'><Link to={`/servicedetails/${service._id}`}>Details
                                                     </Link>
                                                         </button>
-                                                    {/* <Button variant="outline-success"><Link to={`/services/${service._id}`} style={{ textDecoration: 'none', color: 'black', }}>Details</Link></Button> */}
+                                                   
                                                 </Card.Body>
                                             </Card.Body>
                                         </Card>
