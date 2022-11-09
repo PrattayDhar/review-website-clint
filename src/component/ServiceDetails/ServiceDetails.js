@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import './Servicedetails.css'
+import { ImageViewer } from "react-image-viewer-dv";
 
 const ServiceDetails = () => {
     const [user, setReview] = useState([])
@@ -50,7 +51,10 @@ const ServiceDetails = () => {
     return (
         <div className='d-flex'>           
                     <div className="card w-50 h-75 mt-2 mx-2">
-                        <img src={singledetails.img} className="card-img-top" alt="..." />
+                <ImageViewer>
+                    <img src={singledetails.img} className="card-img-top" alt="..." />
+                </ImageViewer>
+                        
                         <div className="card-body">
                             <h5 className="card-title">{singledetails.title}</h5>
                             <p className="card-text">{singledetails.description}</p>
@@ -83,7 +87,7 @@ const ServiceDetails = () => {
                                             <span className="maintxt">{review.UserReview}</span>
                                             <div className="d-flex pt-3">
                                                 <div>
-                                                    <img className='rounded-circle w-50' src={review.UserImage} alt="User Pic" />
+                                                    <img  className='rounded-circle w-50' src={review.UserImage} alt="User Pic" />
                                                 </div>
                                                 <div className="ml-2">
                                                     <span className="name">{review.UserName}</span>

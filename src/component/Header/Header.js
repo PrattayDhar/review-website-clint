@@ -19,6 +19,7 @@ const Header = () => {
     };
     return (
         <div>
+           
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand className='fs-2' to={'/'}>Survey Helper <small className='fs-6'> By Prattay</small></Navbar.Brand>
@@ -28,7 +29,7 @@ const Header = () => {
                             <div></div>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Home</Link></Nav.Link>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/service'}>Service</Link></Nav.Link>
-                            <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Blog</Link></Nav.Link>
+                            <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/blog'}>Blog</Link></Nav.Link>
                             {User ? <Nav.Link><Link style={{ textDecoration: 'none' }} to={'/myreviews'}>My Review</Link></Nav.Link> : ''}
                             {User ? <Nav.Link>
                                 <Link style={{ textDecoration: 'none' }} to={'/AddServices'}>Add Services</Link></Nav.Link> : ''}
