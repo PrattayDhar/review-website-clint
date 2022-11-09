@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
+
 
 const Service = () => {
-    const allservice = useLoaderData()
+    const [loading,setloading] = useState(true);
+    const [allservice,setallservice] = useState();
+    useEffect(() => {
+        fetch(`http://localhost:5000/services`)
+            .then((res) => res.json())
+            .then((data) => {
+                setallservice(data);setloading(false)});   
+    }, []);
+ 
 
     return (
         <div>
@@ -13,9 +22,11 @@ const Service = () => {
                 <Row>
                     <Col lg="10" className='d-none d-lg-block'>
                     </Col>
-                    <Col lg=""><p>Total service:  {allservice.length}</p>
+                    <Col lg="">
                         <Row xs={1} md={3} className="g-4">
-                            {
+                            {loading ? <div className=''><div className="spinner-border text-primary spin" role="status">
+                                
+                            </div></div> :
                                 allservice.map(service =>
                                     <Col>
                                         <Card className='cardmodel'>

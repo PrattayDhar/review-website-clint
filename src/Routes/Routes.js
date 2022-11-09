@@ -23,8 +23,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/service',
-                element: <Service></Service>,
-                loader: () => fetch('http://localhost:5000/services')
+                element: <Service></Service>
+               
             },
             {
                 path:'/getstarted',
