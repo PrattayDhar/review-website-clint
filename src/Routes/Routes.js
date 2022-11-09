@@ -30,8 +30,9 @@ export const routes = createBrowserRouter([
 
             },
             {
-                path:'/myreview',
+                path:'/myreviews',
                 element:<Myreview></Myreview>
+                
             },
             {
                 path:'/AddServices',

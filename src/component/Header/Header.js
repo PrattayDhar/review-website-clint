@@ -29,7 +29,7 @@ const Header = () => {
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Home</Link></Nav.Link>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/service'}>Service</Link></Nav.Link>
                             <Nav.Link ><Link style={{ textDecoration: 'none' }} to={'/'}>Blog</Link></Nav.Link>
-                            {User ? <Nav.Link><Link style={{ textDecoration: 'none' }} to={'/myreview'}>My Review</Link></Nav.Link> : ''}
+                            {User ? <Nav.Link><Link style={{ textDecoration: 'none' }} to={'/myreviews'}>My Review</Link></Nav.Link> : ''}
                             {User ? <Nav.Link>
                                 <Link style={{ textDecoration: 'none' }} to={'/AddServices'}>Add Services</Link></Nav.Link> : ''}
                         </Nav>
