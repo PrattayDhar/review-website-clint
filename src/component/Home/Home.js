@@ -63,6 +63,33 @@ const Home = () => {
                 <button className='btn btn-info mt-4 btns'><Link style={{ textDecoration: 'none' }} className='text-center' to={'/service'}>View All</Link></button>
         </Container>
           
+            <section className="data-information mt-4">
+                <h2>Recent Update</h2>
+                <div className="Data-Area">
+                    <div >
+                        <h3>2</h3>
+                        <h6>Service Years</h6>
+                    </div>
+                    <div >
+                        <h3>400</h3>
+                        <h6>Active Member</h6>
+                    </div>
+                    <div >
+                        <h3>6</h3>
+                        <h6>Running Service</h6>
+                    </div>
+                    <div >
+                        <h3>3</h3>
+                        <h6>Upcomming Srvice</h6>
+                    </div>
+                    <div >
+                        <h3>120+</h3>
+                        <h6>Website Visitor Per/Day</h6>
+                    </div>
+                    
+
+                </div>
+            </section>
 
         </div>
     );

@@ -4,3 +4,22 @@
 .cardmodel{
     background-color: #433e61;
 }
+.data-information {
+    box-sizing: border-box;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+.Data-Area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: #4f9da600 5px solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 60px #ff595986;
+}
