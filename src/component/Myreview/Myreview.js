@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 import './Myreview.css';
 import Modal from 'react-bootstrap/Modal';
+import { Col, Row } from 'react-bootstrap';
 
 const Myreview = () => {
     const [show, setShow] = useState(false);
@@ -52,64 +53,58 @@ const Myreview = () => {
     }
     return (
         <div>
-         
-            <div className="containers mt-5">
-                <h3 className='mx-5 px-5'>My Review</h3>
-
-                <div className="d-flex justify-content-center py-3">
-
-                    <div className="mr-2">
-                        {
-                            myReview.map(review =>
-                                <div className="cards d-flex">
-                                    <div className="px-2 py-2">
-                                        <span className="maintxt">{review.UserReview}</span>
-                                        <div className="d-flex pt-3">
-                                            <div>
-                                                <img className='rounded-circle w-50' src={review.UserImage} alt="User Pic" />
-                                            </div>
-                                            <div className="ml-2">
-                                                <span className="name">{review.UserName}</span>
-                                                <p className="para">{review.UserEmail}</p>
-                                                
-                                                     <button onClick={() => hdlt(review._id)}>Delete Review</button>
-                                                <button className='mt-2' variant="primary" onClick={handleShow}>
-                                                    Update Review
-                                                </button>
-                                             
-                                                <Modal show={show} onHide={handleClose}>
-                                                    <Modal.Header closeButton>
-                                                        <Modal.Title>Modal heading</Modal.Title>
-                                                    </Modal.Header>
-                                                    <Modal.Body>
-                                                        <form>
-                                                            <div className="mb-3">
-                                                                <label htmlFor="review" className="form-label">Give Your Review</label>
-                                                                <input onChange={hndlinput} type="text" className="form-control" name="hasmn" aria-describedby="review" />
-                                                                <div id="review" className="form-text">Update Your Review</div>
-                                                            </div>
-
-                                                            <button onClick={() => revupdate(review._id)} className="btn btn-info" >Submit</button>
-
-                                                        </form>
-                                                    </Modal.Body>
-
-                                                </Modal>
-                                               
-                                            </div>
+            <h2>My Review</h2>
+         <Row>
+                <Col lg="10" className='d-none d-lg-block'>
+                </Col>
+                <Row xs={1} md={3} className="g-4">
+                    {
+                        myReview.map(review =>
+                            <div className="cards mx-2">
+                                <div className="px-2 py-2">
+                                    <span className="maintxt">{review.UserReview}</span>
+                                    <div className="d-flex pt-3">
+                                        <div>
+                                            <img className='rounded-circle w-50' src={review.UserImage} alt="User Pic" />
                                         </div>
+                                        <div className="ml-2">
+                                            <span className="name">{review.UserName}</span>
+                                            <p className="para">{review.UserEmail}</p>
 
+                                            <button onClick={() => hdlt(review._id)}>Delete Review</button>
+                                            <button className='mx-2' variant="primary" onClick={handleShow}>
+                                                Update Review
+                                            </button>
 
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Modal heading</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>
+                                                    <form>
+                                                        <div className="mb-3">
+                                                            <label htmlFor="review" className="form-label">Give Your Review</label>
+                                                            <input onChange={hndlinput} type="text" className="form-control" name="hasmn" aria-describedby="review" />
+                                                            <div id="review" className="form-text">Update Your Review</div>
+                                                        </div>
+
+                                                        <button onClick={() => revupdate(review._id)} className="btn btn-info" >Submit</button>
+
+                                                    </form>
+                                                </Modal.Body>
+
+                                            </Modal>
+
+                                        </div>
                                     </div>
+
+
                                 </div>
-                            )
-                        }
-
-                    </div>
-
-                </div>
-
-            </div>
+                            </div>
+                        )
+                    }
+                </Row>
+         </Row>
             
                        
         </div>
