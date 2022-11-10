@@ -18,7 +18,7 @@ const Myreview = () => {
     console.log(NewReview);
    }
    const HandleUpdate = (id) => {
-    fetch(`http://localhost:5000/myreviewsupdate/${id}`, {
+    fetch(`https://survey-help-server.vercel.app/myreviewsupdate/${id}`, {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ up: NewReview }),
@@ -26,7 +26,7 @@ const Myreview = () => {
   }
    
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/?name=${User?.displayName}`)
+        fetch(`https://survey-help-server.vercel.app/myreviews/?name=${User?.displayName}`)
             .then((res) => res.json())
             .then((data) => setReview(data));
     }, [User]);
@@ -35,7 +35,7 @@ const Myreview = () => {
         const agree = window.confirm(`Are You Sure delete ${_id}`)
         if (agree) {
             // console.log('User delet',_id);
-            fetch(`http://localhost:5000/myreviews/${_id}`, {
+            fetch(`https://survey-help-server.vercel.app/myreviews/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -71,10 +71,14 @@ const Myreview = () => {
                                             <p className="para">{review.UserEmail}</p>
                                             <p className="para">{review.Time}</p>
                                                 <button onClick={() => hdlt(review._id)} className="btn btn-info mb-2">Delete Review</button>
-                                           <div className='d-flex'>
+                                           <form >
+                                            <div className='d-flex'>
+                    
                                             <input type="text" className="form-control mb-2"  onChange={handlechange}/>
                                             <button  onClick={()=>HandleUpdate(review._id) } className="btn btn-info mx-2">submit</button>
                                            </div>
+                                           </form>
+                                           
                                             
 
                                               

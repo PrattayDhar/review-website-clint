@@ -8,7 +8,7 @@ const Addservice = () => {
     const addservice = event =>{
         event.preventDefault();
         console.log(user);
-        fetch("http://localhost:5000/AddServices",{
+        fetch("https://survey-help-server.vercel.app/AddServices",{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

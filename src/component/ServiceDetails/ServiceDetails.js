@@ -28,7 +28,7 @@ const ServiceDetails = () => {
 
         }
 
-        fetch("http://localhost:5000/AddReview", {
+        fetch("https://survey-help-server.vercel.app/AddReview", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const ServiceDetails = () => {
     }
     console.log(_id);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/?id=${_id}`)
+        fetch(`https://survey-help-server.vercel.app/reviews/?id=${_id}`)
             .then((res) => res.json())
             .then((data) => setReview(data));
     }, []);

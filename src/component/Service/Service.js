@@ -9,7 +9,7 @@ const Service = () => {
     const [loading,setloading] = useState(true);
     const [allservice,setallservice] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://survey-help-server.vercel.app/services`)
             .then((res) => res.json())
             .then((data) => {
                 setallservice(data);setloading(false)});   
