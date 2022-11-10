@@ -9,7 +9,6 @@ import { TabTitle } from '../../gfunction';
 
 const Myreview = () => {
     TabTitle('MyReview')
-
     const {User} = useContext(AuthContext)
     const [myReview, setReview] = useState([])
     const [NewReview, setNewReview] = useState({})
@@ -22,7 +21,8 @@ const Myreview = () => {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ up: NewReview }),
-    }).then((res) => res.json());
+    }).then((res) => res.json())
+       .then(alert("Update Done"))
   }
    
     useEffect(() => {
@@ -71,13 +71,13 @@ const Myreview = () => {
                                             <p className="para">{review.UserEmail}</p>
                                             <p className="para">{review.Time}</p>
                                                 <button onClick={() => hdlt(review._id)} className="btn btn-info mb-2">Delete Review</button>
-                                           <form >
+                                          
                                             <div className='d-flex'>
                     
-                                            <input type="text" className="form-control mb-2"  onChange={handlechange}/>
+                                            <input type="text" className="form-control mb-2"  onChange={handlechange} placeholder="Update Review"/>
                                             <button  onClick={()=>HandleUpdate(review._id) } className="btn btn-info mx-2">submit</button>
                                            </div>
-                                           </form>
+                                         
                                            
                                             
 

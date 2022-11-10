@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-// import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import './Servicedetails.css'
@@ -61,7 +60,7 @@ const ServiceDetails = () => {
                             <h5 className="card-title">{singledetails.title}</h5>
                             <p className="card-text">{singledetails.description}</p>
                             <p className="card-text">Price:{singledetails.price}</p></div>
-                        <form onSubmit={reviewsubmit}>
+                            {User?<form onSubmit={reviewsubmit}>
                             <div className="mb-3">
                                 <label htmlFor="review" className="form-label">Give Your Review</label>
                                 <input type="text" className="form-control" name="review" aria-describedby="review" />
@@ -70,7 +69,8 @@ const ServiceDetails = () => {
 
                             <button className="btn btn-info" type="submit" value="Submit">Submit</button>
 
-                        </form>
+                        </form>: <p>Login to add review</p>}
+                        
 
                     </div>
 
