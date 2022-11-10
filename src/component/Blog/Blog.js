@@ -1,7 +1,9 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import { TabTitle } from '../../gfunction';
 
 const Blog = () => {
+    TabTitle('Blog')
     return (
         <div>
             <h1>Welcome To Blog</h1>

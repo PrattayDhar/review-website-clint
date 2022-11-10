@@ -4,8 +4,10 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import './Servicedetails.css'
 import { ImageViewer } from "react-image-viewer-dv";
+import { TabTitle } from '../../gfunction';
 
 const ServiceDetails = () => {
+    TabTitle('Service Details')
     const [user, setReview] = useState([])
     const singledetails = useLoaderData()
     const { User } = useContext(AuthContext)

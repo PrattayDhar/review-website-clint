@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
+import { TabTitle } from '../../gfunction';
 import './Addservice.css'
 const Addservice = () => {
+    TabTitle('Add Service')
     const [user, setUser] = useState({})
     const addservice = event =>{
         event.preventDefault();

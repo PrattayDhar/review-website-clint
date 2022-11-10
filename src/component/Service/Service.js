@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link,  } from 'react-router-dom';
+import { TabTitle } from '../../gfunction';
 
 
 const Service = () => {
+     TabTitle('service')
     const [loading,setloading] = useState(true);
     const [allservice,setallservice] = useState();
     useEffect(() => {

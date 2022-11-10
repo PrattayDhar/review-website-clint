@@ -1,12 +1,18 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+import Helmet from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
+import { TabTitle } from '../../gfunction';
 import image1 from '../../images/carosel/best-online-survey-jobs-in-india.jpg'
 import image2 from '../../images/carosel/Online-survey-jobs.jpg'
 import './home.css'
 
 const Home = () => {
+    TabTitle('home')
+//     <Helmet>
+//     <title>Home</title>
+//   </Helmet>;
     const limitservice=useLoaderData()
     return (
         <div>
